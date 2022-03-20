@@ -1,1 +1,97 @@
 NO WAY
+<h1 style="color: royalblue; text-align: center">WELCOME TO THE CANDY SHOP</h1>
+
+<p>Muestra el {{ title }}</p>
+
+<div style="border-style: inset;">
+<p>MENSAJE: {{saludo3}}</p>
+<p>OPCION 1: <input type="radio" name="radio" [value]="radioButtonSi" (click)="eventoAntro($event)"></p>
+<p>OPCION 2: <input type="radio" name="radio" value="no" (click)="eventoAntro($event)"></p>
+</div>
+
+<div style="border-style: inset;">
+  <p>MENSAJE: {{saludo4}}</p>
+  <p>OPCION 1: <input type="radio" name="radio" value="si" #eventoAntroShit2 (click)="eventoAntro2(eventoAntroShit2.value)"></p>
+  <p>OPCION 2: <input type="radio" name="radio" value="no" #eventoAntroShit3 (click)="eventoAntro2(eventoAntroShit3.value)"></p>
+  </div>
+
+<!---------------------------------------------------------------------->
+<br />
+
+BIDIRECCIONAL →←
+
+<div style="border-style: inset;">
+  <p>MENSAJE: {{saludo5}}</p>
+  <p>TEXTO: <input type="text" [(ngModel)]="saludo5"></p>
+  </div>
+
+<!---------------------------------------------------------------------->
+<br />
+
+<div style="border-style: inset">
+  <p style="font-weight: bold">
+    MENSAJE: <span style="font-weight: normal">{{ saludo }}</span>
+  </p>
+
+  <label for="">DIGITE: <input type="text" #mensaje /></label>
+  <br />
+  <input type="button" value="ENTER" (click)="putMensaje(mensaje.value)" />
+</div>
+
+<!---------------------------------------------------------------------->
+
+<br />
+
+<div style="border-style: inset">
+  <h3>PROPIEDADES BINDING</h3>
+
+  <input type="checkbox" (change)="checkThis()" /> CLICK HERE
+</div>
+
+
+<div style="border-style: inset">
+  <h3>{{saludo2}}</h3> <!--EVENT BINDING-->
+
+  <input type="checkbox" (change)="alerteEste()"/> CLICK HERE
+</div>
+
+<!---------------------------------------------------------------------->
+
+<br />
+
+<div style="border-style: inset">
+  <p style="font-weight: bold">
+    MENSAJE: <span style="font-weight: normal">{{ mensaje1.value }}</span>
+  </p>
+
+  <label for=""
+    >DIGITE:
+    <input type="number" #mensaje1 (keyup)="(0)" [disabled]="habilitacion"
+  /></label>
+  <br />
+</div>
+
+<div style="border-style: inset">
+  <p style="font-weight: bold">
+    MENSAJE: <span style="font-weight: normal">{{ mensaje2.value }}</span>
+  </p>
+
+  <label for=""
+    >DIGITE:
+    <input type="text" #mensaje2 (keyup)="(0)" [disabled]="habilitacion"
+  /></label>
+  <br />
+</div>
+<br />
+
+<!---------------------------------------------------------------------->
+
+<h2 style="font-family: 'Courier New', Courier, monospace">SOLO UN EMPLEADO</h2>
+<app-empleado></app-empleado>
+
+<br />
+
+<div style="border-style: inset;">
+<h1>VARIOS EMPLEADOS</h1>
+<app-empleados></app-empleados>
+</div>
