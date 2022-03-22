@@ -1,1 +1,19 @@
-<p class="btn btn-primary">NO WAY</p>
+<h1 style="text-align: center">{{ titulo }}</h1>
+
+<form style="border-style: inset" action="">
+  NOMBRE: <input type="text" name="nombre" [(ngModel)]="nombre"/>
+  <br />
+  <br />
+  APELLIDO: <input type="text" name="apellido" [(ngModel)]="apellido" />
+  <br />
+  <br />
+
+  <input type="submit" value="ENTER" (click)="registrar()"/>
+</form>
+ 
+<br />
+<br />
+
+<p *ngIf="registrado" [class]="color" [style]="colorFont">{{mensaje}}</p>
+<!--nfIg como condicional para renderizar en el DOM. registrado es un boolean del componente-->
+
