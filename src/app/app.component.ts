@@ -17,6 +17,21 @@ export class AppComponent {
 
   titulo = 'REGISTRO DE USUARIO';
 
+  blogEntradas: any[];
+
+  constructor() {
+
+    this.blogEntradas=[
+      {titulo:"BLOG_1 Nada nuevo"},
+      {titulo:"BLOG_2 Descubrimiento de Virus T"},
+      {titulo:"BLOG_3 Nacion UMBRELLA"},
+      {titulo:"BLOG_4 Incidente en Rancoon City"},
+      {titulo:"BLOG_5 No new MWS..."}
+    ]
+
+
+  }
+
   registrar(): void {
     if (this.nombre == '' || this.apellido == '') {
       this.registrado = true;

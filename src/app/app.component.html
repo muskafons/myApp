@@ -1,19 +1,37 @@
 <h1 style="text-align: center">{{ titulo }}</h1>
 
-<form style="border-style: inset" action="">
-  NOMBRE: <input type="text" name="nombre" [(ngModel)]="nombre"/>
+<form style="border-style: inset; background-color: aquamarine;" action="">
+  NOMBRE: <input type="text" name="nombre" [(ngModel)]="nombre" />
   <br />
   <br />
   APELLIDO: <input type="text" name="apellido" [(ngModel)]="apellido" />
   <br />
   <br />
 
-  <input type="submit" value="ENTER" (click)="registrar()"/>
+  <input type="submit" value="ENTER" (click)="registrar()" />
 </form>
- 
+
 <br />
 <br />
 
-<p *ngIf="registrado" [class]="color" [style]="colorFont">{{mensaje}}</p>
+<p *ngIf="registrado; else sinRegistrar" [class]="color" [style]="colorFont">
+  {{ mensaje }}
+</p>
 <!--nfIg como condicional para renderizar en el DOM. registrado es un boolean del componente-->
 
+<ng-template #sinRegistrar>
+  <p>De momento nadie registrado...</p>
+</ng-template>
+
+<br />
+<br />
+
+<hr />
+
+<!-- BUCLE FOR para recorrido del array entradasBlog-->
+
+<h1 style="text-align: center">RECORRIDO ARRAY</h1>
+
+<ul>
+  <li *ngFor="let blogEntrada of blogEntradas">{{ blogEntrada.titulo }}</li>
+</ul>
