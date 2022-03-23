@@ -9,6 +9,7 @@ export class AppComponent {
   nombre: string = '';
   apellido: string = '';
   mensaje: string = '';
+  cargo: string = '';
 
   registrado: boolean = false;
 
@@ -20,30 +21,26 @@ export class AppComponent {
   blogEntradas: any[];
 
   constructor() {
-
-    this.blogEntradas=[
-      {titulo:"BLOG_1 Nada nuevo"},
-      {titulo:"BLOG_2 Descubrimiento de Virus T"},
-      {titulo:"BLOG_3 Nacion UMBRELLA"},
-      {titulo:"BLOG_4 Incidente en Rancoon City"},
-      {titulo:"BLOG_5 No new MWS..."}
-    ]
-
-
+    this.blogEntradas = [
+      { titulo: 'BLOG_1 Nada nuevo' },
+      { titulo: 'BLOG_2 Descubrimiento de Virus T' },
+      { titulo: 'BLOG_3 Nacion UMBRELLA' },
+      { titulo: 'BLOG_4 Incidente en Rancoon City' },
+      { titulo: 'BLOG_5 No new MWS...' },
+    ];
   }
 
   registrar(): void {
-    if (this.nombre == '' || this.apellido == '') {
+    if (this.nombre == '' || this.apellido == '' || this.cargo == '') {
       this.registrado = true;
       this.color = 'bg-danger bg-gradient';
       this.colorFont = 'color: aliceblue';
-      this.mensaje = 'Digite nombre y apellido !!!';
+      this.mensaje = 'Digite nombre, apellido y cargo !!!';
     } else {
       this.registrado = true;
       this.color = 'bg-success bg-gradient';
       this.colorFont = 'color: aliceblue';
-      this.mensaje =
-        this.nombre + ' ' + this.apellido + ' registrado con exito';
+      this.mensaje ="USUARIO: " + this.nombre;
     }
   }
 }

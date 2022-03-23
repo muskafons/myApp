@@ -1,10 +1,13 @@
 <h1 style="text-align: center">{{ titulo }}</h1>
 
-<form style="border-style: inset; background-color: aquamarine;" action="">
+<form style="border-style: inset; background-color: aquamarine" action="">
   NOMBRE: <input type="text" name="nombre" [(ngModel)]="nombre" />
   <br />
   <br />
   APELLIDO: <input type="text" name="apellido" [(ngModel)]="apellido" />
+  <br />
+  <br />
+  CARGO: <input type="text" name="cargo" [(ngModel)]="cargo" />
   <br />
   <br />
 
@@ -16,6 +19,10 @@
 
 <p *ngIf="registrado; else sinRegistrar" [class]="color" [style]="colorFont">
   {{ mensaje }}
+  <span [ngClass]="{ paraFonseca: apellido == 'Fonseca' }">{{ apellido }} </span>
+  <span [ngStyle]="{ color: cargo == 'Director' ? 'red' : 'black' }">{{
+    cargo
+  }}</span>
 </p>
 <!--nfIg como condicional para renderizar en el DOM. registrado es un boolean del componente-->
 
