@@ -64,18 +64,10 @@
 </div>
 
 <hr />
-<div class="col" style="text-align: center;">{{ mensaje }}</div>
+<div class="col" style="text-align: center">{{ mensaje }}</div>
 <hr />
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-3" *ngFor="let empleado of empleados">
-      NOMBRE: {{ empleado.nombre }} <br />
-      APELLIDO: {{ empleado.apellido }} <br />
-      CARGO: {{ empleado.cargo }} <br />
-      SUELDO: {{ empleado.salario }} <br />
+<app-empleado-hijo class="col-md-3" *ngFor="let empleado of empleados" [empleadoToHijo]="empleado">
+</app-empleado-hijo>
 
-      <br />
-    </div>
-  </div>
-</div>
+<hr />
