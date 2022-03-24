@@ -59,6 +59,9 @@
       <button type="submit" class="btn btn-primary" (click)="addRegistro()">
         ENTER
       </button>
+      <button type="submit" class="btn btn-primary" (click)="useServicio()">
+        ENTER (Servicio)
+      </button>
     </div>
   </div>
 </div>
@@ -71,3 +74,15 @@
 </app-empleado-hijo>
 
 <hr />
+
+<h1>MUESTRA EMPLEADOS CON SERVICIOS!!!</h1>
+
+{{mensaje2}}
+
+<div *ngFor="let empleadoServicio of empleadosServicio">
+  NOMBRE: {{ empleadoServicio.nombre }} <br />
+  APELLIDO: {{ empleadoServicio.apellido }} <br />
+  CARGO: {{ empleadoServicio.cargo }} <br />
+  SUELDO: {{ empleadoServicio.salario }} <br />
+  <br />
+</div>

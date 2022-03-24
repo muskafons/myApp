@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
 import { EmpleadoHijoCaracteristicasComponent } from './empleado-hijo-caracteristicas/empleado-hijo-caracteristicas.component';
+import { ServicioEmpleadoService } from './servicio-empleado.service';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { EmpleadoHijoCaracteristicasComponent } from './empleado-hijo-caracteris
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServicioEmpleadoService, ServicioEmpleadosService], //Se colocan todos los servicios
   bootstrap: [AppComponent]
 })
 export class AppModule { }
