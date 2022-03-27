@@ -11,6 +11,10 @@ import { ServicioEmpleadoService } from '../servicio-empleado.service';
 export class ActualizarComponent implements OnInit {
   mensaje: string = 'WELCOME';
   indice: number = this.route.snapshot.params['id']; //recoje el "id" enviado desde <a> con home.component </a>;
+  
+  valor:number = this.route.snapshot.queryParams['valor'];
+  mensajeValor:string = '';
+  
   empleado: Empleado = this.servicio.empleados[this.indice];
 
   constructor(
@@ -20,6 +24,12 @@ export class ActualizarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if(this.valor==1){
+      this.mensajeValor="actualizar";
+    }
+    else if(this.valor==2){
+      this.useServicioEliminar();
+    }
   }
 
   cuadroNombre: string =    this.empleado.nombre;
@@ -38,6 +48,10 @@ export class ActualizarComponent implements OnInit {
   useServicioEliminar() {
     this.servicio.empleados.splice(this.indice,1);
      this.router.navigate(['']);
+   }
+
+   useServicioAccion(){
+     this.useServicioActualizar();
    }
 
 }

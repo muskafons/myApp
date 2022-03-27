@@ -11,13 +11,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ServicioEmpleadoService } from './servicio-empleado.service';
 import { ActualizarComponent } from './actualizar.component/actualizar.component';
+import { ErrorComponent } from './error.component/error.component';
 
 const Rutas: Routes = [
   { path: '', component: HomeComponent },
   { path: 'proyectos', component: ProyectosComponent },
   { path: 'quienes', component: QuienesComponent },
   { path: 'contactos', component: ContactosComponent },
-  { path: 'actualizar/:id', component: ActualizarComponent }
+  { path: 'actualizar/:id', component: ActualizarComponent },
+  {path: '**',component: ErrorComponent}
 
 ];
 
@@ -29,6 +31,7 @@ const Rutas: Routes = [
     ContactosComponent,
     ProyectosComponent,
     ActualizarComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule.forRoot(Rutas)],
   providers: [ServicioEmpleadoService],

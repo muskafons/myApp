@@ -68,7 +68,10 @@
         APELLIDO: {{ empleadoServicio.apellido }} <br />
         CARGO: {{ empleadoServicio.cargo }} <br />
         SUELDO: {{ empleadoServicio.salario }} <br />
-        <br />
+        <a [routerLink]="['actualizar',id]" [queryParams]="{valor:'1'}">[ACTUALIZAR]</a>
+        <a [routerLink]="['actualizar',id]" [queryParams]="{valor:'2'}">[ELIMINAR]</a>
+        <br>
+        <br>
       </div>
     </div>
   </div>
