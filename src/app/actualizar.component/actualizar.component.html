@@ -1,7 +1,3 @@
-<div style="text-align: center">
-  <button class="btn btn-primary" (click)="volver()">VOLVER</button>
-</div>
-
 <div class="container" style="background-color: honeydew">
     <div class="col" style="text-align: center; color: blueviolet">
       <h1>:: {{ mensaje }} ::</h1>
@@ -56,9 +52,12 @@
     <br />
     <div class="row">
       <div class="col">
-        <button type="submit" class="btn btn-primary" (click)="useServicio()">
-          ENTER
+        <button type="submit" class="btn btn-primary" (click)="useServicioActualizar()">
+          ACTUALIZAR
         </button>
+        <button type="submit" class="btn btn-danger" (click)="useServicioEliminar()">
+            ELIMINAR
+          </button>
       </div>
     </div>
   

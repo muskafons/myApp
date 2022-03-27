@@ -61,8 +61,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-3" *ngFor="let empleadoServicio of empleadosServicio">
-        NOMBRE: {{ empleadoServicio.nombre }} <br />
+      <div class="col-md-3" *ngFor="let id = index; let empleadoServicio of empleadosServicio">
+        ID: {{ id }} <br />
+        <a [routerLink]="['actualizar',id]"> NOMBRE: {{ empleadoServicio.nombre }}</a>
+        <br />
         APELLIDO: {{ empleadoServicio.apellido }} <br />
         CARGO: {{ empleadoServicio.cargo }} <br />
         SUELDO: {{ empleadoServicio.salario }} <br />
